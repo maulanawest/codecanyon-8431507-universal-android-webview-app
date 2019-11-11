@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -315,7 +316,10 @@ public class MainFragment extends TaskFragment implements SwipeRefreshLayout.OnR
 			mWebView.loadUrl(url);
 		} else {
 			showProgress(false);
-			Toast.makeText(getActivity(), R.string.global_network_offline, Toast.LENGTH_LONG).show();
+			//Toast.makeText(getActivity(), R.string.global_network_offline, Toast.LENGTH_LONG).show();
+			Toast toast = Toast.makeText(getActivity(), R.string.global_network_offline, Toast.LENGTH_LONG);
+			toast.setGravity(Gravity.CENTER, 0, 0);
+			toast.show();
 		}
 	}
 

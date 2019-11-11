@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements LoadUrlListener, 
 	private String mUrl;
 	private AdMobInterstitialHelper mAdMobInterstitialHelper = new AdMobInterstitialHelper();
 
+
 	public static Intent newIntent(Context context) {
 		Intent intent = new Intent(context, MainActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -160,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements LoadUrlListener, 
 		mDrawerToggle.onConfigurationChanged(newConfiguration);
 	}
 
+	//start closes app
 	@Override
 	public void onBackPressed() {
 		if (isDrawerOpen()) {
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements LoadUrlListener, 
 						.setAction(R.string.main_exit_confirm, new View.OnClickListener() {
 							@Override
 							public void onClick(View view) {
-								MainActivity.super.onBackPressed();
+							    MainActivity.super.onBackPressed();
 							}
 						})
 						.show();
@@ -180,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements LoadUrlListener, 
 			}
 		}
 	}
+
 
 	@Override
 	public void onLoadUrl(String url) {
